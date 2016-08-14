@@ -1,0 +1,40 @@
+package ejercicio.demo;
+
+public class Demo2 {
+	
+	public static boolean perteneceTodos(int [] elems, int[] conjunto){
+		if(elems.length>conjunto.length)
+			return false;
+		if(elems.length==0 || conjunto.length==0)
+			return false;
+		boolean acum=true;
+		for(int i=0;i<elems.length;i++){
+			acum=acum && siEsta(elems[i],conjunto);
+		}
+		return acum;
+	}
+	public static boolean siEsta(int elem, int[] arr){
+		for(int i=0;i<arr.length;i++){
+			if(arr[i]==elem)
+				return true;
+		}
+		return false;
+	}
+	
+	
+	public static int indicePico(int[] arreglo) { //se garantiza que el arreglo tiene forma de pico
+		int pos=-1;
+		int pico=arreglo[0];
+		if(arreglo.length==0)
+			return pos;
+		for(int i=1;i<arreglo.length;i++){
+			if(pico<arreglo[i]){
+				pico=arreglo[i];
+				pos=i;
+			}
+		}
+		return pos;
+			
+	}
+
+}
